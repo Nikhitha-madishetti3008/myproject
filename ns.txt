@@ -1,0 +1,18 @@
+declare
+cursor fiverow is select * from emp;
+demp emp%rowtype;
+begin
+open fiverow;
+loop
+fetch fiverow into demp;
+if fiverow%notfound then
+exit;
+elsif fiverow%rowcount=5 then
+print('empno='||demp.empno);
+print('ename='||demp.ename);
+print('sal='||demp.sal);
+end if;
+end loop;
+close fiverow;
+end;
+/

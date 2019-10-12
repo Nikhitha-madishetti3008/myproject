@@ -1,0 +1,204 @@
+class shape
+{
+String color;
+boolean filled;
+public shape()
+{
+color="green";
+filled =true;
+}
+public shape(String c,boolean f)
+{
+color=c;
+filled=f;
+}
+void setcolor(String s)
+{
+color=s;
+}
+String getcolor()
+{
+return color;
+}
+void setfilled(boolean b)
+{
+filled=b;
+}
+boolean isfilled()
+{
+return filled;
+}
+public String toString()
+{
+return "shapecolor="+color+"filled="+filled;
+}
+}
+class circle extends shape
+{
+double radius;
+public circle()
+{
+super();
+radius=1.0;
+}
+public circle(double r)
+{
+super();
+radius=r;
+}
+public circle(double r,String c,boolean f)
+{
+super(c,f);
+radius=r;
+}
+void setradius(double r)
+{
+radius=r;
+}
+double getradius()
+{
+return radius;
+}
+double getarea()
+{
+return 3.14*radius*radius;
+}
+double getperimeter()
+{
+return 2*3.14*radius;
+}
+public String toString()
+{
+return "circle:subclass of"+super.toString()+"radius="+radius;
+}
+}
+class rectangle extends shape
+{
+double width,length;
+public rectangle()
+{
+super();
+width=1.0;
+length=1.0;
+}
+public rectangle(double w,double l)
+{
+super();
+width=w;
+length=l;
+}
+public rectangle(double w,double l,String s,boolean f)
+{
+super(s,f);
+width=w;
+length=l;
+}
+void setwidth(double w)
+{
+width=w;
+}
+double getwidth()
+{
+return width;
+}
+void setlength(double l)
+{
+length=l;
+}
+double getlength()
+{
+return length;
+}
+double getarea()
+{
+return length*width;
+}
+double getperimeter()
+{
+return 2*(length+width);
+}
+public String toString()
+{
+return "rectangle:subclassof"+super.toString()+"width="+width;
+}
+}
+class square extends rectangle
+{
+public square()
+{
+super();
+}
+public square(double s)
+{
+super();
+double width=s;
+}
+public square(double s,double w,double l)
+{
+super(w,l);
+double width=s;
+}
+void setside(double s)
+{
+double width=s;
+}
+double getside()
+{
+return width;
+}
+void setwidth(double w)
+{
+width=w;
+}
+void setlength(double l)
+{
+length=l;
+}
+public String toString()
+{
+return "square:subclass of"+super.toString()+"width="+width;
+}
+}
+class large
+{
+public static void main(String args[])
+{
+circle c=new circle();
+c.setradius(3.0);
+System.out.println("\n circle:radius="+c.getradius()+"\n area="+c.getradius()+"\n perimeter="+c.getperimeter());
+circle c1=new circle(12.0);
+c1.setradius(4.0);
+System.out.print("\n circle:radius="+c1.getradius()+"\narea="+c1.getarea()+"\nperimeter="+c1.getperimeter());
+circle c2=new circle(12.0,"red",true);
+c2.setradius(4.0);
+System.out.println("circle:radius="+c2.getradius()+"\n area="+c2.getarea()+"\nperimeter="+c2.getperimeter());
+rectangle r=new rectangle();
+r.setlength(2.0);
+r.setwidth(2.0);
+System.out.println("rectangle:length="+r.getlength()+"\nwidth="+r.getwidth()+"\narea="+r.getarea()+"\nperimeter="+r.getperimeter());
+rectangle r1=new rectangle(3.0,4.0,"yellow",true);
+r1.setlength(2.0);
+r1.setwidth(2.0);
+System.out.println("rectangle:length="+r1.getlength()+"\nwidth="+r1.getwidth()+"\narea="+r1.getarea()+"\nperimeter="+r1.getperimeter());
+rectangle r2=new rectangle(3.0,4.0,"yellow",true);
+r2.setlength(2.0);
+r2.setwidth(2.0);
+System.out.println("\n rectangle:length="+r2.getlength()+"\nwidth="+r2.getwidth()+"\narea="+r2.getarea()+"\nperimeter="+r2.getperimeter());
+square s=new square();
+s.setside(2.0);
+s.setwidth(3.0);
+s.setlength(2.0);
+System.out.println("\n square:side="+s.getside());
+square s1=new square(3.0);
+s1.setside(2.0);
+s1.setwidth(3.0);
+s1.setlength(2.0);
+System.out.print("\n square:side="+s1.getside());
+square s2=new square(3.0,2.0,1.0);
+s2.setside(2.0);
+s2.setwidth(3.0);
+s2.setlength(2.0);
+System.out.println("\n square:side="+s2.getside());
+}
+}
+

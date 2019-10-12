@@ -1,0 +1,7 @@
+ create or replace function edept(ddeptno emp.deptno%type)
+    return number is n number(2);
+    begin
+    select count(*) into n from emp where deptno=ddeptno;
+    return(n);
+    end;
+    /

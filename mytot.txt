@@ -1,0 +1,18 @@
+
+ declare
+  cursor c1 is select * from students;
+   r c1%rowtype;
+   mytot number;
+   begin
+   open c1;
+   loop
+   fetch c1 into r;
+   exit when c1%notfound;
+  total(r.m1,r.m2,r.m3,mytot);
+   update students set total=mytot
+   avg=avgf(mytot)
+   where htno=r.htno;
+  end loop;
+   close c1;
+   end;
+   /

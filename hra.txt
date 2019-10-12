@@ -1,0 +1,19 @@
+ declare
+   dempno emp.empno%type:=&dempno;
+   dename emp.ename%type;
+   dsal emp.sal%type;
+   da emp.sal%type;
+   hra emp.sal%type;
+   cca emp.sal%type;
+   nsal emp.sal%type;
+   begin
+   select ename,sal into dename,dsal from emp where empno=dempno;
+   da:=dsal*0.01;
+   hra:=dsal*0.08;
+   cca:=dsal*0.06;
+   nsal:=dsal+da+hra+cca;
+   insert into psal101 values(dempno,dename,dsal,da,hra,cca,nsal);
+end;
+/
+  
+

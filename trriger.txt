@@ -1,0 +1,10 @@
+
+ create or replace trigger tg123456
+ after
+    delete on emp for each row
+    begin
+    if :old.empno=7654 then
+    raise_application_error(-2001,'empno doesnot exist');
+    end if;
+    end;
+/

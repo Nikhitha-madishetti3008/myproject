@@ -1,0 +1,13 @@
+declare
+dempno emp.empno%type:=&dempno;
+dsal emp.sal%type;
+dcomm emp.comm%type;
+k number(5);
+begin
+select sal,comm into dsal,dcomm from emp where empno=dempno;
+print('sal'||dsal);
+print('comm'||dcomm);
+k:=dsal+dcomm;
+print('totalsal'||k);
+end;
+/

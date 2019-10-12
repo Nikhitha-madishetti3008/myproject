@@ -1,0 +1,20 @@
+
+ declare
+   ddeptno emp.deptno%type:=&ddeptno;
+   cursor cempdept is select empno,ename,sal,deptno from emp where deptno=ddeptno;
+   dempno emp.empno%type;
+   dename emp.ename%type;
+   dsal emp.sal%type;
+   begin
+   open cempdept;
+   loop
+   fetch cempdept into dempno,dename,dsal,ddeptno;
+   if cempdept%notfound then
+   exit;
+   else
+   print('empno'||dempno||'ename'||dename||'sal'||dsal||'deptno'||ddeptno);
+   end if;
+   end loop;
+  close cempdept;
+  end;
+  /

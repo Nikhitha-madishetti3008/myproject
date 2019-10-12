@@ -1,0 +1,10 @@
+
+ create or replace trigger tg2
+    after
+    delete on emp for each row
+    begin
+   if:old.empno=1 then
+    raise.application.error(-2001;'empno doesn't exists');
+    end if;
+    end;
+    /

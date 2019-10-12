@@ -1,0 +1,24 @@
+create or replace package myfact is function factorial(n number) return number;
+end;
+/
+create or replace package body myfact is function factorial(n number) return number
+is dn number(4):=&dn;
+prod number(4):=1;
+begin
+while(dn>0)
+loop
+prod:=prod*dn;
+dn:=dn-1;
+end loop;
+return(prod);
+end factorial;
+end;
+/
+declare
+n number(4):=&n;
+k number;
+begin
+k:=myfact.factorial(n);
+print ('factorial='||k);
+end;
+/

@@ -1,0 +1,18 @@
+     declare
+      a number(5):=&a;
+      b number(5):=&b;
+      addition number(5);
+      subtraction number(5);
+      multiplication number(5);
+      division number(5);
+      begin 
+      addition:=(a+b);
+      subtraction:=(a-b);
+      multiplication:=(a*b);
+      division:=(a/b);
+      dbms_output.put_line(addition);
+      dbms_output.put_line(subtraction);
+      dbms_output.put_line(multiplication);
+      dbms_output.put_line(division);
+      end;
+      /
